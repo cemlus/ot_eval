@@ -43,7 +43,7 @@ for i=1:m
 		
 		if(d ~= 0)
 			X = aa\bb;
-			if(X>0)
+			if(X>=0)
 				pt = [pt X];
 			end
 		end
