@@ -38,7 +38,7 @@ pt = []
 for i=1:m
 	for j=i+1:m
 		aa = [A(i, :) ; A(j, :)];
-		bb = [B(i, :) ; B(j, :)];
+		bb = [B(i) ; B(j)];
 		d = det(aa)
 		
 		if(d ~= 0)
