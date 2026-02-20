@@ -54,7 +54,13 @@ for i = 1:ncm
     basicvar_index = pair(i,:);  
     % selecting one combination of basic variables
     
-    X = A(:,basicvar_index)\b;    
+    B = A(:, basicvar_index);
+    if abs(det(B)) < 1e-6
+          continue;
+    end
+    X = B\b;
+    
+    % X = A(:,basicvar_index)\b;    
     % solving AX = b for chosen basic variables
     
     y(basicvar_index) = X;        
