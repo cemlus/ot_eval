@@ -33,12 +33,12 @@ end
 
 A = [A; eye(2)];
 B = [B; 0; 0];
- 
+m = size(A,1)
 pt = []
 for i=1:m
 	for j=i+1:m
-		aa = [A(i,:) ; A(j,:)];
-		bb = [B(i,:) ; B(j,:)];
+		aa = [A(i, :) ; A(j, :)];
+		bb = [B(i, :) ; B(j, :)];
 		d = det(aa)
 		
 		if(d ~= 0)
@@ -55,9 +55,9 @@ end
 FP = []
 Z = []
 
-for i = 0:size(pt,2)
-	PT1 = pt(1,i);
-	PT2 = pt(2,i);
+for i = 1:size(pt,2)
+	PT1 = pt(1, i);
+	PT2 = pt(2, i);
 	
 	if(c1(PT1,PT2)<=0 && c2(PT1,PT2)<=0)
 		FP = [FP pt(:,i)]
@@ -72,4 +72,4 @@ end
 optimal_sol = FP(:,idx)
 
 printf('the optimal solution is: %.2f\n', optimal_val)
-printf('the optimal points are x1: %.2f and x2: %.2f\n' optimal_sol(1), optimal_sol(2))
+printf('the optimal points are x1: %.2f and x2: %.2f\n', optimal_sol(1), optimal_sol(2))
